@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;NovelGuess - Daily Book Game&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- React &amp; ReactDOM --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Babel --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f8f5f2; /* Paper-like off-white */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.serif {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Merriweather', serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Custom Scrollbar */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #f1f1f1;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #cbd5e1;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #94a3b8;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.clue-reveal-enter {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(10px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.clue-reveal-enter-active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>opacity: 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: translateY(0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: opacity 300ms, transform 300ms;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="root"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script type="text/babel"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const { useState, useEffect, useRef } = React;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- ICONS (Inline) ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Icon = ({ path, size = 24, className = "" }) =&gt; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>{path}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Book = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /&gt;&lt;path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const User = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /&gt;&lt;circle cx="12" cy="7" r="4" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const HelpCircle = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;circle cx="12" cy="12" r="10" /&gt;&lt;path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /&gt;&lt;line x1="12" y1="17" x2="12.01" y2="17" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const SkipForward = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;polygon points="5 4 15 12 5 20 5 4" /&gt;&lt;line x1="19" y1="5" x2="19" y2="19" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Check = (props) =&gt; &lt;Icon {...props} path={&lt;polyline points="20 6 9 17 4 12" /&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const X = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;line x1="18" y1="6" x2="6" y2="18" /&gt;&lt;line x1="6" y1="6" x2="18" y2="18" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Trophy = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M8 21h8" /&gt;&lt;path d="M12 17v4" /&gt;&lt;path d="M7 4h10" /&gt;&lt;path d="M17 4v3a5 5 0 0 1-10 0V4" /&gt;&lt;line x1="10" y1="2" x2="14" y2="2" /&gt;&lt;path d="M21 7v3a8 8 0 0 1-5 7.6V8" /&gt;&lt;path d="M3 7v3a8 8 0 0 0 5 7.6V8" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Search = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;circle cx="11" cy="11" r="8" /&gt;&lt;line x1="21" y1="21" x2="16.65" y2="16.65" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const BookOpen = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /&gt;&lt;path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const MapPin = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /&gt;&lt;circle cx="12" cy="10" r="3" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Brain = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" /&gt;&lt;path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Heart = (props) =&gt; &lt;Icon {...props} path={&lt;path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Quote = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" /&gt;&lt;path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const Calendar = (props) =&gt; &lt;Icon {...props} path={&lt;&gt;&lt;rect x="3" y="4" width="18" height="18" rx="2" ry="2" /&gt;&lt;line x1="16" y1="2" x2="16" y2="6" /&gt;&lt;line x1="8" y1="2" x2="8" y2="6" /&gt;&lt;line x1="3" y1="10" x2="21" y2="10" /&gt;&lt;/&gt;} /&gt;;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const ICON_MAP = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Book": Book, "User": User, "MapPin": MapPin, "Search": Search,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Quote": Quote, "Brain": Brain, "Heart": Heart, "BookOpen": BookOpen</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- GAME DATA ---</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// In a real app, this array should be HUGE (365+ entries).</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const GAMES_DB = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>id: 1,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "The Great Gatsby",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>author: "F. Scott Fitzgerald",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>clues: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Genre &amp; Style", text: "A modernist tragedy set in the Jazz Age, dealing with themes of decadence and idealism.", icon: "Book" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Setting", text: "Long Island, New York. specifically the fictional villages of West Egg and East Egg.", icon: "MapPin" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Character", text: "A narrator named Nick who moves next door to a mysterious millionaire.", icon: "User" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Plot Detail", text: "The protagonist is obsessed with a green light at the end of a dock across the water.", icon: "Search" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Famous Quote", text: "'So we beat on, boats against the current, borne back ceaselessly into the past.'", icon: "Quote" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>id: 2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "1984",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>author: "George Orwell",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>clues: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Genre &amp; Style", text: "A dystopian social science fiction novel and cautionary tale.", icon: "Book" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Concept", text: "Introduced terms like 'Doublethink', 'Thoughtcrime', and 'Newspeak' into the lexicon.", icon: "Brain" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Setting", text: "A superstate called Oceania, ruled by the Party who employs the Thought Police.", icon: "MapPin" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Character", text: "Winston Smith, a low-ranking member of the Party who works at the Ministry of Truth.", icon: "User" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Famous Phrase", text: "'Big Brother is watching you.'", icon: "Quote" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>id: 3,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: "Pride and Prejudice",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>author: "Jane Austen",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>clues: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Genre &amp; Style", text: "A romantic novel of manners written in the early 19th century.", icon: "Book" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Setting", text: "Hertfordshire and Derbyshire in rural England.", icon: "MapPin" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Plot", text: "A mother is desperate to marry off her five daughters to wealthy suitors.", icon: "Heart" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Character", text: "Elizabeth, who initially detests the wealthy but aloof Mr. Darcy.", icon: "User" },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{ type: "Famous Quote", text: "'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.'", icon: "Quote" }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const BOOK_LIST = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"The Great Gatsby", "1984", "Pride and Prejudice", "To Kill a Mockingbird", "The Catcher in the Rye",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Moby Dick", "War and Peace", "Hamlet", "The Odyssey", "Ulysses", "Brave New World",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"The Lord of the Rings", "Harry Potter and the Sorcerer's Stone", "The Hobbit", "Fahrenheit 451",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Jane Eyre", "Wuthering Heights", "Animal Farm", "Lord of the Flies", "The Grapes of Wrath",<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>"Little Women", "Frankenstein", "Dracula"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// --- COMPONENTS ---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const ClueBox = ({ clue, index, revealed, isNew }) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!revealed) return (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="h-20 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 bg-gray-50 mb-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span className="text-sm font-semibold tracking-wider"&gt;CLUE {index + 1} LOCKED&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const IconComponent = ICON_MAP[clue.icon] || BookOpen;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className={`relative overflow-hidden bg-white border border-gray-200 rounded-xl shadow-sm p-4 mb-3 transition-all duration-500 ${isNew ? 'ring-2 ring-indigo-200 animate-pulse' : ''}`}&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div className="flex items-start gap-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="bg-indigo-100 p-2 rounded-lg text-indigo-700 shrink-0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;IconComponent size={20} /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-xs font-bold text-indigo-600 uppercase tracking-wide mb-1"&gt;{clue.type}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="serif text-gray-800 text-lg leading-snug"&gt;{clue.text}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const GuessRow = ({ guess, status }) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let bgColor = "bg-gray-100";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let borderColor = "border-gray-200";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let icon = null;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (status === "skipped") {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>bgColor = "bg-gray-100";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>borderColor = "border-gray-300";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>icon = &lt;SkipForward size={16} className="text-gray-500" /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else if (status === "wrong") {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>bgColor = "bg-red-50";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>borderColor = "border-red-200";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>icon = &lt;X size={16} className="text-red-500" /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} else if (status === "correct") {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>bgColor = "bg-green-50";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>borderColor = "border-green-200";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>icon = &lt;Check size={16} className="text-green-600" /&gt;;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className={`${bgColor} border ${borderColor} rounded-lg p-3 mb-2 flex items-center justify-between`}&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span className={`font-medium ${status === 'skipped' ? 'text-gray-500 italic' : 'text-gray-800'}`}&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{guess || "Skipped"}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{icon}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const App = () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// DAILY LOGIC</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// 1. Calculate "Game ID" based on date.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// This ensures everyone gets the same game on the same day.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const getDailyGameIndex = () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const epoch = new Date("2024-01-01T00:00:00");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const today = new Date();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>today.setHours(0,0,0,0); // normalize</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const diffTime = Math.abs(today - epoch);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return diffDays % GAMES_DB.length;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [gameId, setGameId] = useState(getDailyGameIndex());</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [clueLevel, setClueLevel] = useState(0);<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [guesses, setGuesses] = useState([]);<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [gameStatus, setGameStatus] = useState('playing'); // playing, won, lost</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [searchQuery, setSearchQuery] = useState('');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const [showSuggestions, setShowSuggestions] = useState(false);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const currentGame = GAMES_DB[gameId];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const maxGuesses = 5;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Load Progress from LocalStorage on mount</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const todayStr = new Date().toISOString().split('T')[0]; // "2023-10-27"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const savedState = localStorage.getItem(`novelguess-${todayStr}`);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (savedState) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const parsed = JSON.parse(savedState);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setGuesses(parsed.guesses);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setClueLevel(parsed.clueLevel);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setGameStatus(parsed.gameStatus);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}, []);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Save Progress to LocalStorage on change</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>useEffect(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const todayStr = new Date().toISOString().split('T')[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const stateToSave = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>guesses,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>clueLevel,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>gameStatus</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>localStorage.setItem(`novelguess-${todayStr}`, JSON.stringify(stateToSave));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}, [guesses, clueLevel, gameStatus]);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const filteredBooks = BOOK_LIST.filter(b =&gt;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>b.toLowerCase().includes(searchQuery.toLowerCase())</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>).slice(0, 5);<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// --- ACTIONS ---</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const handleGuess = (bookTitle) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (gameStatus !== 'playing') return;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const isCorrect = bookTitle.toLowerCase() === currentGame.title.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const newGuess = { text: bookTitle, status: isCorrect ? 'correct' : 'wrong' };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const newGuesses = [...guesses, newGuess];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setGuesses(newGuesses);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setSearchQuery('');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setShowSuggestions(false);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (isCorrect) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setGameStatus('won');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setClueLevel(4);<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (newGuesses.length &gt;= maxGuesses) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>setGameStatus('lost');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>setClueLevel(4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (clueLevel &lt; 4) setClueLevel(clueLevel + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const handleSkip = () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (gameStatus !== 'playing') return;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const newGuess = { text: "Skipped", status: 'skipped' };</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const newGuesses = [...guesses, newGuess];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>setGuesses(newGuesses);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (newGuesses.length &gt;= maxGuesses) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setGameStatus('lost');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setClueLevel(4);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (clueLevel &lt; 4) setClueLevel(clueLevel + 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div className="min-h-screen flex flex-col max-w-lg mx-auto bg-white shadow-2xl min-h-screen border-x border-gray-100"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{/* HEADER */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;header className="p-4 border-b border-gray-100 bg-white sticky top-0 z-10 flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;BookOpen className="text-indigo-600" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h1 className="text-xl font-bold tracking-tight text-gray-900"&gt;NovelGuess&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex gap-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex items-center gap-1 text-xs font-semibold bg-gray-100 px-2 py-1 rounded text-gray-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;Calendar size={14} /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span&gt;DAILY #{gameId + 1}&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;button className="text-gray-400 hover:text-indigo-600 transition"&gt;&lt;HelpCircle size={20} /&gt;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;main className="flex-1 p-4 pb-32 overflow-y-auto"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{/* PROGRESS INDICATOR */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="flex gap-1 mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>{[0,1,2,3,4].map(i =&gt; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div key={i} className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>i &lt; guesses.length ? (guesses[i].status === 'correct' ? 'bg-green-500' : guesses[i].status === 'skipped' ? 'bg-gray-400' : 'bg-red-400') : 'bg-gray-100'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>}`}&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>))}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{/* CLUES AREA */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>{currentGame.clues.map((clue, index) =&gt; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;ClueBox<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>key={index}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>clue={clue}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>index={index}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>revealed={index &lt;= clueLevel}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>isNew={index === clueLevel &amp;&amp; gameStatus === 'playing'}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>))}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{/* GUESS HISTORY */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{guesses.length &gt; 0 &amp;&amp; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h3 className="text-xs font-bold text-gray-400 uppercase mb-2"&gt;Your Guesses&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{guesses.map((g, i) =&gt; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;GuessRow key={i} guess={g.text} status={g.status} /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>))}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>)}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{/* END SCREEN (WIN/LOSS) */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>{gameStatus !== 'playing' &amp;&amp; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className={`p-6 rounded-xl text-center mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ${gameStatus === 'won' ? 'bg-green-50 border border-green-100' : 'bg-red-50 border border-red-100'}`}&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-sm mb-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>{gameStatus === 'won' ? &lt;Trophy className="text-green-600" /&gt; : &lt;Book className="text-red-500" /&gt;}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h2 className="text-2xl font-bold mb-1 serif text-gray-900"&gt;{currentGame.title}&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p className="text-gray-600 mb-4"&gt;by {currentGame.author}&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="text-sm font-medium mb-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>{gameStatus === 'won' ?<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;span className="text-green-700"&gt;You got it in {guesses.length} guess{guesses.length !== 1 ? 'es' : ''}!&lt;/span&gt; :<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;span className="text-red-700"&gt;Better luck next time!&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="bg-gray-100 rounded-lg p-4 text-sm text-gray-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>Come back tomorrow for a new book!</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>)}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{/* INPUT AREA (Fixed at bottom) */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>{gameStatus === 'playing' &amp;&amp; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 max-w-lg mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{/* Search Input */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div className="relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;input<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>type="text"<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>placeholder="Search for a book title..."<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>value={searchQuery}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>onChange={(e) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                            </span>setSearchQuery(e.target.value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                            </span>setShowSuggestions(true);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>}}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>onFocus={() =&gt; setShowSuggestions(true)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>/&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{/* Autocomplete Dropdown */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>{showSuggestions &amp;&amp; searchQuery.length &gt; 0 &amp;&amp; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div className="absolute bottom-full left-0 right-0 mb-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-60 overflow-y-auto z-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>{filteredBooks.length &gt; 0 ? (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                            </span>filteredBooks.map((book, idx) =&gt; (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;button</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                    </span>key={idx}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                    </span>className="w-full text-left px-4 py-3 hover:bg-indigo-50 transition border-b border-gray-50 last:border-0 text-gray-700"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                    </span>onClick={() =&gt; handleGuess(book)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                </span>&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                    </span>{book}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                            </span>))</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>) : (</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                            </span>&lt;div className="px-4 py-3 text-gray-400 text-sm"&gt;No books found&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>{/* Controls */}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div className="flex gap-3 mt-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;button<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>onClick={handleSkip}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>className="flex-1 py-3 px-4 bg-white border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition flex items-center justify-center gap-2"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;SkipForward size={18} /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>Skip (+1 Clue)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p className="text-center text-xs text-gray-400 mt-2"&gt;Guess {guesses.length + 1} of {maxGuesses}&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>)}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const root = ReactDOM.createRoot(document.getElementById('root'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>root.render(&lt;App /&gt;);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
