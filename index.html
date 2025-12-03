@@ -87,7 +87,7 @@
         };
 
         // --- GAME DATA ---
-        // In a real app, this array should be HUGE (365+ entries).
+        // Expanded database with 20+ books from the provided list
         const GAMES_DB = [
             {
                 id: 1,
@@ -124,15 +124,234 @@
                     { type: "Character", text: "Elizabeth, who initially detests the wealthy but aloof Mr. Darcy.", icon: "User" },
                     { type: "Famous Quote", text: "'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.'", icon: "Quote" }
                 ]
+            },
+            {
+                id: 4,
+                title: "Don Quixote",
+                author: "Miguel de Cervantes",
+                clues: [
+                    { type: "Genre & Style", text: "Often cited as the first modern novel, a satire of chivalric romances.", icon: "Book" },
+                    { type: "Character", text: "A middle-aged noble from La Mancha who loses his wits from reading too many books.", icon: "User" },
+                    { type: "Character", text: "His loyal, simple-minded squire, Sancho Panza, who rides a donkey.", icon: "User" },
+                    { type: "Plot Detail", text: "Famous for attacking windmills, believing them to be ferocious giants.", icon: "Search" },
+                    { type: "Famous Quote", text: "'Finally, from so little sleeping and so much reading, his brain dried up and he went completely out of his mind.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 5,
+                title: "Alice's Adventures in Wonderland",
+                author: "Lewis Carroll",
+                clues: [
+                    { type: "Genre & Style", text: "A 19th-century fantasy known for its logic puzzles and surreal imagery.", icon: "Book" },
+                    { type: "Setting", text: "A strange subterranean world reached by falling down a hole.", icon: "MapPin" },
+                    { type: "Character", text: "Includes a smoking caterpillar, a disappearing cat, and a Mad Hatter.", icon: "User" },
+                    { type: "Plot Detail", text: "The protagonist attends a chaotic tea party and plays croquet with flamingos.", icon: "Search" },
+                    { type: "Famous Quote", text: "'Curiouser and curiouser!'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 6,
+                title: "The Adventures of Huckleberry Finn",
+                author: "Mark Twain",
+                clues: [
+                    { type: "Genre & Style", text: "A picaresque novel noted for its colorful description of people and places along the Mississippi River.", icon: "Book" },
+                    { type: "Character", text: "A young boy escaping his abusive father and a runaway slave named Jim.", icon: "User" },
+                    { type: "Setting", text: "Primarily set on a raft traveling south down the river.", icon: "MapPin" },
+                    { type: "Conflict", text: "The protagonist struggles with his conscience over helping a slave escape.", icon: "Heart" },
+                    { type: "Famous Quote", text: "'All right, then, I'll go to hell.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 7,
+                title: "Treasure Island",
+                author: "Robert Louis Stevenson",
+                clues: [
+                    { type: "Genre & Style", text: "The quintessential adventure novel about buccaneers and buried gold.", icon: "Book" },
+                    { type: "Character", text: "Long John Silver, a one-legged ship's cook with a parrot.", icon: "User" },
+                    { type: "Plot Detail", text: "Young Jim Hawkins discovers a map in a dead man's chest.", icon: "Search" },
+                    { type: "Iconic Imagery", text: "Popularized the concept of 'X marks the spot' and the Black Spot.", icon: "Brain" },
+                    { type: "Famous Quote", text: "'Fifteen men on the dead man's chest—Yo-ho-ho, and a bottle of rum!'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 8,
+                title: "Wuthering Heights",
+                author: "Emily Brontë",
+                clues: [
+                    { type: "Genre & Style", text: "A dark, Gothic romance set on the wild moors of Yorkshire.", icon: "Book" },
+                    { type: "Character", text: "Heathcliff, a brooding and vindictive foundling.", icon: "User" },
+                    { type: "Plot Detail", text: "The story spans two generations of the Earnshaw and Linton families.", icon: "Heart" },
+                    { type: "Themes", text: "Obsessive love, revenge, and the destructive nature of passion.", icon: "Brain" },
+                    { type: "Famous Quote", text: "'Whatever our souls are made of, his and mine are the same.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 9,
+                title: "Jane Eyre",
+                author: "Charlotte Brontë",
+                clues: [
+                    { type: "Genre & Style", text: "A Bildungsroman following the emotions and experiences of its eponymous heroine.", icon: "Book" },
+                    { type: "Setting", text: "Thornfield Hall, a large estate with a dark secret in the attic.", icon: "MapPin" },
+                    { type: "Character", text: "Mr. Rochester, the Byronic employer with whom the governess falls in love.", icon: "User" },
+                    { type: "Plot Detail", text: "The wedding is interrupted by the revelation of a living wife.", icon: "Search" },
+                    { type: "Famous Quote", text: "'I am no bird; and no net ensnares me: I am a free human being with an independent will.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 10,
+                title: "Moby Dick",
+                author: "Herman Melville",
+                clues: [
+                    { type: "Genre & Style", text: "An epic sea story filled with detailed descriptions of whaling.", icon: "Book" },
+                    { type: "Character", text: "Captain Ahab, who is driven by a monomaniacal desire for revenge.", icon: "User" },
+                    { type: "Symbolism", text: "A massive white whale representing nature, God, or fate.", icon: "Brain" },
+                    { type: "Setting", text: "The whaling ship Pequod.", icon: "MapPin" },
+                    { type: "Famous Quote", text: "'Call me Ishmael.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 11,
+                title: "The Scarlet Letter",
+                author: "Nathaniel Hawthorne",
+                clues: [
+                    { type: "Genre & Style", text: "A historical romance set in 17th-century Puritan Boston.", icon: "Book" },
+                    { type: "Character", text: "Hester Prynne, who bears an illegitimate child named Pearl.", icon: "User" },
+                    { type: "Plot Detail", text: "The protagonist is forced to wear a symbol of her adultery on her dress.", icon: "Search" },
+                    { type: "Character", text: "Arthur Dimmesdale, the tormented minister who hides his sin.", icon: "User" },
+                    { type: "Famous Quote", text: "'No man, for any considerable period, can wear one face to himself and another to the multitude...'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 12,
+                title: "A Christmas Carol",
+                author: "Charles Dickens",
+                clues: [
+                    { type: "Genre & Style", text: "A Victorian novella that helped define the modern holiday spirit.", icon: "Book" },
+                    { type: "Character", text: "Ebenezer Scrooge, a miserly banker who despises Christmas.", icon: "User" },
+                    { type: "Plot Detail", text: "The protagonist is visited by three spirits: Past, Present, and Yet to Come.", icon: "Search" },
+                    { type: "Character", text: "Tiny Tim, a sickly child who wishes blessings on everyone.", icon: "User" },
+                    { type: "Famous Quote", text: "'God bless us, every one!'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 13,
+                title: "Little Women",
+                author: "Louisa May Alcott",
+                clues: [
+                    { type: "Genre & Style", text: "A coming-of-age novel based on the author's own childhood.", icon: "Book" },
+                    { type: "Character", text: "The four March sisters: Meg, Jo, Beth, and Amy.", icon: "User" },
+                    { type: "Setting", text: "New England during and after the American Civil War.", icon: "MapPin" },
+                    { type: "Character", text: "Jo, a tomboy and aspiring writer who struggles with societal expectations.", icon: "User" },
+                    { type: "Famous Quote", text: "'I am not afraid of storms, for I am learning how to sail my ship.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 14,
+                title: "The Hobbit",
+                author: "J.R.R. Tolkien",
+                clues: [
+                    { type: "Genre & Style", text: "A children's fantasy novel that serves as a prelude to a larger epic.", icon: "Book" },
+                    { type: "Character", text: "Bilbo Baggins, a reluctant hero who enjoys comfort and food.", icon: "User" },
+                    { type: "Plot Detail", text: "A quest to reclaim the Lonely Mountain and its treasure from a dragon.", icon: "Search" },
+                    { type: "Antagonist", text: "Smaug, a fearsome and intelligent dragon.", icon: "Brain" },
+                    { type: "Famous Quote", text: "'In a hole in the ground there lived a hobbit.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 15,
+                title: "Frankenstein",
+                author: "Mary Shelley",
+                clues: [
+                    { type: "Genre & Style", text: "Often considered the first science fiction novel, written by an 18-year-old.", icon: "Book" },
+                    { type: "Plot Detail", text: "A scientist discovers the secret of life and builds a creature from body parts.", icon: "Search" },
+                    { type: "Theme", text: "The danger of unchecked ambition and the responsibility of a creator.", icon: "Brain" },
+                    { type: "Character", text: "The 'Creature', who is intelligent and articulate but rejected by society.", icon: "User" },
+                    { type: "Famous Quote", text: "'Beware; for I am fearless, and therefore powerful.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 16,
+                title: "Oliver Twist",
+                author: "Charles Dickens",
+                clues: [
+                    { type: "Genre & Style", text: "A social novel that exposes the cruel treatment of orphans in London.", icon: "Book" },
+                    { type: "Character", text: "Fagin, the leader of a gang of juvenile pickpockets.", icon: "User" },
+                    { type: "Plot Detail", text: "An orphan boy runs away from a workhouse to London.", icon: "Search" },
+                    { type: "Character", text: "The Artful Dodger, a charming and skillful young thief.", icon: "User" },
+                    { type: "Famous Quote", text: "'Please, sir, I want some more.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 17,
+                title: "Brave New World",
+                author: "Aldous Huxley",
+                clues: [
+                    { type: "Genre & Style", text: "A futuristic dystopian novel set in London in AD 2540.", icon: "Book" },
+                    { type: "Concept", text: "Citizens are hatched in bottles and conditioned into a caste system (Alphas, Betas, etc.).", icon: "Brain" },
+                    { type: "Plot Detail", text: "A 'Savage' named John is brought from a reservation to civilization.", icon: "Search" },
+                    { type: "Theme", text: "The cost of stability is the loss of individuality, art, and emotion.", icon: "Brain" },
+                    { type: "Famous Quote", text: "'But I don't want comfort. I want God, I want poetry, I want real danger, I want freedom, I want goodness. I want sin.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 18,
+                title: "War and Peace",
+                author: "Leo Tolstoy",
+                clues: [
+                    { type: "Genre & Style", text: "A massive historical novel chronicling the French invasion of Russia.", icon: "Book" },
+                    { type: "Setting", text: "Russia during the Napoleonic era, spanning 1805 to 1820.", icon: "MapPin" },
+                    { type: "Character", text: "Pierre Bezukhov, an illegitimate son who inherits a fortune and seeks spiritual meaning.", icon: "User" },
+                    { type: "Character", text: "Natasha Rostova, a young countess whose romantic life is central to the plot.", icon: "User" },
+                    { type: "Famous Quote", text: "'The strongest of all warriors are these two — Time and Patience.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 19,
+                title: "To Kill a Mockingbird",
+                author: "Harper Lee",
+                clues: [
+                    { type: "Genre & Style", text: "A Southern Gothic novel dealing with racial injustice and the loss of innocence.", icon: "Book" },
+                    { type: "Setting", text: "The fictional town of Maycomb, Alabama, during the Great Depression.", icon: "MapPin" },
+                    { type: "Character", text: "Atticus Finch, a lawyer appointed to defend a black man accused of a crime.", icon: "User" },
+                    { type: "Character", text: "Scout, the young narrator, and her mysterious neighbor Boo Radley.", icon: "User" },
+                    { type: "Famous Quote", text: "'You never really understand a person until you consider things from his point of view... until you climb into his skin and walk around in it.'", icon: "Quote" }
+                ]
+            },
+            {
+                id: 20,
+                title: "Les Misérables",
+                author: "Victor Hugo",
+                clues: [
+                    { type: "Genre & Style", text: "One of the greatest novels of the 19th century, focusing on law, grace, and redemption.", icon: "Book" },
+                    { type: "Character", text: "Jean Valjean, an ex-convict who struggles to redeem himself.", icon: "User" },
+                    { type: "Character", text: "Javert, a police inspector strictly dedicated to the law who hunts the protagonist.", icon: "User" },
+                    { type: "Plot Detail", text: "The story culminates in the June Rebellion of 1832 in Paris.", icon: "Search" },
+                    { type: "Famous Quote", text: "'It is nothing to die. It is frightful not to live.'", icon: "Quote" }
+                ]
             }
         ];
 
+        // Expanded book list including many titles from the user's file for search/distractors
         const BOOK_LIST = [
-            "The Great Gatsby", "1984", "Pride and Prejudice", "To Kill a Mockingbird", "The Catcher in the Rye", 
-            "Moby Dick", "War and Peace", "Hamlet", "The Odyssey", "Ulysses", "Brave New World", 
-            "The Lord of the Rings", "Harry Potter and the Sorcerer's Stone", "The Hobbit", "Fahrenheit 451", 
-            "Jane Eyre", "Wuthering Heights", "Animal Farm", "Lord of the Flies", "The Grapes of Wrath", 
-            "Little Women", "Frankenstein", "Dracula"
+            "Don Quixote", "Alice's Adventures in Wonderland", "The Adventures of Huckleberry Finn", "The Adventures of Tom Sawyer", "Treasure Island",
+            "Pride and Prejudice", "Wuthering Heights", "Jane Eyre", "Moby Dick", "The Scarlet Letter",
+            "Gulliver's Travels", "The Pilgrim's Progress", "A Christmas Carol", "David Copperfield", "A Tale of Two Cities",
+            "Little Women", "Great Expectations", "The Hobbit", "Frankenstein", "Oliver Twist",
+            "Uncle Tom's Cabin", "Crime and Punishment", "Madame Bovary", "The Return of the King", "Dracula",
+            "The Three Musketeers", "Brave New World", "War and Peace", "To Kill a Mockingbird", "The Wizard of Oz",
+            "Les Misérables", "The Secret Garden", "Animal Farm", "The Great Gatsby", "1984", "Lord of the Flies",
+            "The Grapes of Wrath", "Catch-22", "Lolita", "The Catcher in the Rye", "Beloved",
+            "The Lord of the Rings", "Fahrenheit 451", "Heart of Darkness", "The Old Man and the Sea", "Of Mice and Men",
+            "A Farewell to Arms", "The Sun Also Rises", "For Whom the Bell Tolls", "East of Eden", "The Pearl",
+            "On the Road", "One Flew Over the Cuckoo's Nest", "Slaughterhouse-Five", "Invisible Man", "Native Son",
+            "Their Eyes Were Watching God", "The Color Purple", "Song of Solomon", "The Bell Jar", "The Handmaid's Tale",
+            "Life of Pi", "The Kite Runner", "A Thousand Splendid Suns", "The Book Thief", "The Help",
+            "Water for Elephants", "The Hunger Games", "Harry Potter and the Sorcerer's Stone", "Twilight", "The Da Vinci Code",
+            "Angels & Demons", "The Alchemist", "The Pillars of the Earth", "Outlander", "A Game of Thrones",
+            "The Name of the Wind", "The Way of Kings", "Mistborn", "Dune", "Ender's Game",
+            "Foundation", "Neuromancer", "Snow Crash", "The Hitchhiker's Guide to the Galaxy", "Good Omens",
+            "American Gods", "Coraline", "Stardust", "Neverwhere", "The Graveyard Book",
+            "Percy Jackson & The Olympians", "The Chronicles of Narnia", "Anne of Green Gables", "Charlotte's Web", "Matilda"
         ];
 
         // --- COMPONENTS ---
@@ -283,134 +502,158 @@
             };
 
             return (
-                <div className="min-h-screen flex flex-col max-w-lg mx-auto bg-white shadow-2xl min-h-screen border-x border-gray-100">
+                <div className="min-h-screen bg-[#f8f5f2] flex justify-center">
                     
-                    {/* HEADER */}
-                    <header className="p-4 border-b border-gray-100 bg-white sticky top-0 z-10 flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            <BookOpen className="text-indigo-600" />
-                            <h1 className="text-xl font-bold tracking-tight text-gray-900">NovelGuess</h1>
+                    {/* Left Sidebar / Ad Space - Visible on large screens */}
+                    <div className="hidden xl:block w-64 p-4 sticky top-0 h-screen">
+                        <div className="w-full h-full border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400">
+                            Ad Space (160x600)
                         </div>
-                        <div className="flex gap-3">
-                            <div className="flex items-center gap-1 text-xs font-semibold bg-gray-100 px-2 py-1 rounded text-gray-500">
-                                <Calendar size={14} />
-                                <span>DAILY #{gameId + 1}</span>
-                            </div>
-                            <button className="text-gray-400 hover:text-indigo-600 transition"><HelpCircle size={20} /></button>
-                        </div>
-                    </header>
+                    </div>
 
-                    <main className="flex-1 p-4 pb-32 overflow-y-auto">
+                    {/* Main Game Column */}
+                    <div className="w-full max-w-lg bg-white shadow-2xl min-h-screen border-x border-gray-100 flex flex-col relative">
                         
-                        {/* PROGRESS INDICATOR */}
-                        <div className="flex gap-1 mb-6">
-                            {[0,1,2,3,4].map(i => (
-                                <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
-                                    i < guesses.length ? (guesses[i].status === 'correct' ? 'bg-green-500' : guesses[i].status === 'skipped' ? 'bg-gray-400' : 'bg-red-400') : 'bg-gray-100'
-                                }`}></div>
-                            ))}
+                        {/* Top Mobile Banner Ad Placeholder */}
+                        <div className="w-full h-16 bg-gray-50 border-b border-gray-100 flex items-center justify-center text-gray-300 text-xs">
+                            Mobile Ad Space (320x50)
                         </div>
 
-                        {/* CLUES AREA */}
-                        <div className="mb-6">
-                            {currentGame.clues.map((clue, index) => (
-                                <ClueBox 
-                                    key={index} 
-                                    clue={clue} 
-                                    index={index} 
-                                    revealed={index <= clueLevel}
-                                    isNew={index === clueLevel && gameStatus === 'playing'} 
-                                />
-                            ))}
-                        </div>
+                        {/* HEADER */}
+                        <header className="p-4 border-b border-gray-100 bg-white sticky top-0 z-10 flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                                <BookOpen className="text-indigo-600" />
+                                <h1 className="text-xl font-bold tracking-tight text-gray-900">NovelGuess</h1>
+                            </div>
+                            <div className="flex gap-3">
+                                <div className="flex items-center gap-1 text-xs font-semibold bg-gray-100 px-2 py-1 rounded text-gray-500">
+                                    <Calendar size={14} />
+                                    <span>DAILY #{gameId + 1}</span>
+                                </div>
+                                <button className="text-gray-400 hover:text-indigo-600 transition"><HelpCircle size={20} /></button>
+                            </div>
+                        </header>
 
-                        {/* GUESS HISTORY */}
-                        {guesses.length > 0 && (
-                            <div className="mb-6">
-                                <h3 className="text-xs font-bold text-gray-400 uppercase mb-2">Your Guesses</h3>
-                                {guesses.map((g, i) => (
-                                    <GuessRow key={i} guess={g.text} status={g.status} />
+                        <main className="flex-1 p-4 pb-32 overflow-y-auto">
+                            
+                            {/* PROGRESS INDICATOR */}
+                            <div className="flex gap-1 mb-6">
+                                {[0,1,2,3,4].map(i => (
+                                    <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
+                                        i < guesses.length ? (guesses[i].status === 'correct' ? 'bg-green-500' : guesses[i].status === 'skipped' ? 'bg-gray-400' : 'bg-red-400') : 'bg-gray-100'
+                                    }`}></div>
                                 ))}
                             </div>
-                        )}
-                        
-                        {/* END SCREEN (WIN/LOSS) */}
-                        {gameStatus !== 'playing' && (
-                            <div className={`p-6 rounded-xl text-center mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ${gameStatus === 'won' ? 'bg-green-50 border border-green-100' : 'bg-red-50 border border-red-100'}`}>
-                                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-sm mb-3">
-                                    {gameStatus === 'won' ? <Trophy className="text-green-600" /> : <Book className="text-red-500" />}
-                                </div>
-                                <h2 className="text-2xl font-bold mb-1 serif text-gray-900">{currentGame.title}</h2>
-                                <p className="text-gray-600 mb-4">by {currentGame.author}</p>
-                                
-                                <div className="text-sm font-medium mb-6">
-                                    {gameStatus === 'won' ? 
-                                        <span className="text-green-700">You got it in {guesses.length} guess{guesses.length !== 1 ? 'es' : ''}!</span> : 
-                                        <span className="text-red-700">Better luck next time!</span>
-                                    }
-                                </div>
-                                
-                                <div className="bg-gray-100 rounded-lg p-4 text-sm text-gray-500">
-                                    Come back tomorrow for a new book!
-                                </div>
-                            </div>
-                        )}
 
-                    </main>
-
-                    {/* INPUT AREA (Fixed at bottom) */}
-                    {gameStatus === 'playing' && (
-                        <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 max-w-lg mx-auto">
-                            <div className="relative">
-                                {/* Search Input */}
-                                <div className="relative">
-                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-                                    <input 
-                                        type="text" 
-                                        placeholder="Search for a book title..." 
-                                        className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
-                                        value={searchQuery}
-                                        onChange={(e) => {
-                                            setSearchQuery(e.target.value);
-                                            setShowSuggestions(true);
-                                        }}
-                                        onFocus={() => setShowSuggestions(true)}
+                            {/* CLUES AREA */}
+                            <div className="mb-6">
+                                {currentGame.clues.map((clue, index) => (
+                                    <ClueBox 
+                                        key={index} 
+                                        clue={clue} 
+                                        index={index} 
+                                        revealed={index <= clueLevel}
+                                        isNew={index === clueLevel && gameStatus === 'playing'} 
                                     />
+                                ))}
+                            </div>
+
+                            {/* GUESS HISTORY */}
+                            {guesses.length > 0 && (
+                                <div className="mb-6">
+                                    <h3 className="text-xs font-bold text-gray-400 uppercase mb-2">Your Guesses</h3>
+                                    {guesses.map((g, i) => (
+                                        <GuessRow key={i} guess={g.text} status={g.status} />
+                                    ))}
+                                </div>
+                            )}
+                            
+                            {/* END SCREEN (WIN/LOSS) */}
+                            {gameStatus !== 'playing' && (
+                                <div className={`p-6 rounded-xl text-center mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 ${gameStatus === 'won' ? 'bg-green-50 border border-green-100' : 'bg-red-50 border border-red-100'}`}>
+                                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-sm mb-3">
+                                        {gameStatus === 'won' ? <Trophy className="text-green-600" /> : <Book className="text-red-500" />}
+                                    </div>
+                                    <h2 className="text-2xl font-bold mb-1 serif text-gray-900">{currentGame.title}</h2>
+                                    <p className="text-gray-600 mb-4">by {currentGame.author}</p>
+                                    
+                                    <div className="text-sm font-medium mb-6">
+                                        {gameStatus === 'won' ? 
+                                            <span className="text-green-700">You got it in {guesses.length} guess{guesses.length !== 1 ? 'es' : ''}!</span> : 
+                                            <span className="text-red-700">Better luck next time!</span>
+                                        }
+                                    </div>
+                                    
+                                    <div className="bg-gray-100 rounded-lg p-4 text-sm text-gray-500">
+                                        Come back tomorrow for a new book!
+                                    </div>
+                                </div>
+                            )}
+
+                        </main>
+
+                        {/* INPUT AREA (Fixed at bottom) */}
+                        {gameStatus === 'playing' && (
+                            <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 max-w-lg mx-auto z-50">
+                                <div className="relative">
+                                    {/* Search Input */}
+                                    <div className="relative">
+                                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                                        <input 
+                                            type="text" 
+                                            placeholder="Search for a book title..." 
+                                            className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                                            value={searchQuery}
+                                            onChange={(e) => {
+                                                setSearchQuery(e.target.value);
+                                                setShowSuggestions(true);
+                                            }}
+                                            onFocus={() => setShowSuggestions(true)}
+                                        />
+                                    </div>
+
+                                    {/* Autocomplete Dropdown */}
+                                    {showSuggestions && searchQuery.length > 0 && (
+                                        <div className="absolute bottom-full left-0 right-0 mb-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-60 overflow-y-auto z-20">
+                                            {filteredBooks.length > 0 ? (
+                                                filteredBooks.map((book, idx) => (
+                                                    <button
+                                                        key={idx}
+                                                        className="w-full text-left px-4 py-3 hover:bg-indigo-50 transition border-b border-gray-50 last:border-0 text-gray-700"
+                                                        onClick={() => handleGuess(book)}
+                                                    >
+                                                        {book}
+                                                    </button>
+                                                ))
+                                            ) : (
+                                                <div className="px-4 py-3 text-gray-400 text-sm">No books found</div>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
 
-                                {/* Autocomplete Dropdown */}
-                                {showSuggestions && searchQuery.length > 0 && (
-                                    <div className="absolute bottom-full left-0 right-0 mb-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-60 overflow-y-auto z-20">
-                                        {filteredBooks.length > 0 ? (
-                                            filteredBooks.map((book, idx) => (
-                                                <button
-                                                    key={idx}
-                                                    className="w-full text-left px-4 py-3 hover:bg-indigo-50 transition border-b border-gray-50 last:border-0 text-gray-700"
-                                                    onClick={() => handleGuess(book)}
-                                                >
-                                                    {book}
-                                                </button>
-                                            ))
-                                        ) : (
-                                            <div className="px-4 py-3 text-gray-400 text-sm">No books found</div>
-                                        )}
-                                    </div>
-                                )}
+                                {/* Controls */}
+                                <div className="flex gap-3 mt-3">
+                                    <button 
+                                        onClick={handleSkip}
+                                        className="flex-1 py-3 px-4 bg-white border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition flex items-center justify-center gap-2"
+                                    >
+                                        <SkipForward size={18} />
+                                        Skip (+1 Clue)
+                                    </button>
+                                </div>
+                                <p className="text-center text-xs text-gray-400 mt-2">Guess {guesses.length + 1} of {maxGuesses}</p>
                             </div>
+                        )}
+                    </div>
 
-                            {/* Controls */}
-                            <div className="flex gap-3 mt-3">
-                                <button 
-                                    onClick={handleSkip}
-                                    className="flex-1 py-3 px-4 bg-white border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition flex items-center justify-center gap-2"
-                                >
-                                    <SkipForward size={18} />
-                                    Skip (+1 Clue)
-                                </button>
-                            </div>
-                            <p className="text-center text-xs text-gray-400 mt-2">Guess {guesses.length + 1} of {maxGuesses}</p>
+                    {/* Right Sidebar / Ad Space - Visible on large screens */}
+                    <div className="hidden xl:block w-64 p-4 sticky top-0 h-screen">
+                        <div className="w-full h-full border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400">
+                            Ad Space (160x600)
                         </div>
-                    )}
+                    </div>
+
                 </div>
             );
         };
